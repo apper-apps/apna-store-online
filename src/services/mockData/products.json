@@ -277,9 +277,10 @@
       "https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=800&h=800&fit=crop",
       "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=800&h=800&fit=crop"
     ],
-    "description": "Dell Inspiron 15 laptop with Intel i5 processor, 8GB RAM, and 512GB SSD.",
+"description": "Dell Inspiron 15 laptop with Intel i5 processor, 8GB RAM, and 512GB SSD.",
     "inStock": true,
-"reviews": 67,
+    "rating": 4.5,
+    "reviews": 67,
     "featured": true,
     "tags": ["laptop", "dell", "computer"],
     "customerReviews": [
@@ -299,9 +300,8 @@
         "helpful": 12,
         "images": []
       }
-    ]
+]
   },
-  {
   {
     "Id": 8,
     "name": "Organic Green Tea 100g",
@@ -316,9 +316,10 @@
       "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&h=800&fit=crop",
       "https://images.unsplash.com/photo-1597318378463-b2a9fe2b719b?w=800&h=800&fit=crop"
     ],
-    "description": "Premium organic green tea with natural antioxidants. Refreshing and healthy.",
+"description": "Premium organic green tea with natural antioxidants. Refreshing and healthy.",
     "inStock": true,
-"reviews": 43,
+    "rating": 4.6,
+    "reviews": 43,
     "featured": false,
     "tags": ["tea", "organic", "healthy"],
     "customerReviews": [
@@ -338,9 +339,8 @@
         "helpful": 6,
         "images": []
       }
-    ]
+]
   },
-  {
   {
     "Id": 9,
     "name": "Men's Denim Jeans",
@@ -356,9 +356,10 @@
       "https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=800&h=800&fit=crop",
       "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=800&fit=crop"
     ],
-    "description": "Classic denim jeans for men. Comfortable fit and durable quality.",
+"description": "Classic denim jeans for men. Comfortable fit and durable quality.",
     "inStock": true,
-"reviews": 234,
+    "rating": 4.8,
+    "reviews": 234,
     "featured": true,
     "tags": ["jeans", "denim", "men"],
     "customerReviews": [
@@ -377,10 +378,8 @@
         "reviewText": "Good quality jeans but sizing runs slightly large. Material is durable.",
         "helpful": 17,
         "images": []
-      }
-    ]
+]
   },
-  {
   {
     "Id": 10,
     "name": "Kitchen Mixer Grinder",
@@ -395,9 +394,10 @@
       "https://images.unsplash.com/photo-1585515656803-1aaa9b8a74e7?w=800&h=800&fit=crop",
       "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=800&fit=crop"
     ],
-    "description": "Powerful 750W mixer grinder with 3 jars. Perfect for Indian cooking needs.",
+"description": "Powerful 750W mixer grinder with 3 jars. Perfect for Indian cooking needs.",
     "inStock": true,
-"reviews": 189,
+    "rating": 4.3,
+    "reviews": 189,
     "featured": false,
     "tags": ["mixer", "grinder", "kitchen"],
     "customerReviews": [
@@ -416,10 +416,8 @@
         "reviewText": "Good performance and build quality. All jars are useful. Slightly noisy but effective.",
         "helpful": 13,
         "images": []
-      }
-    ]
+]
   },
-  {
   {
     "Id": 11,
     "name": "Yoga Mat Premium",
@@ -434,9 +432,10 @@
       "https://images.unsplash.com/photo-1592901193605-84b5bc1fb97a?w=800&h=800&fit=crop",
       "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=800&fit=crop"
     ],
-    "description": "High-quality yoga mat with anti-slip surface. Perfect for yoga and exercise.",
+"description": "High-quality yoga mat with anti-slip surface. Perfect for yoga and exercise.",
     "inStock": true,
-"reviews": 98,
+    "rating": 4.4,
+    "reviews": 98,
     "featured": false,
     "tags": ["yoga", "fitness", "exercise"],
     "customerReviews": [
@@ -455,10 +454,8 @@
         "reviewText": "Good quality mat for home workouts. Thickness is perfect and easy to clean.",
         "helpful": 11,
         "images": []
-      }
-    ]
+]
   },
-  {
   {
     "Id": 12,
     "name": "Smartphone Case iPhone 14",
@@ -473,9 +470,10 @@
       "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=800&h=800&fit=crop",
       "https://images.unsplash.com/photo-1574168966919-b894a916cd42?w=800&h=800&fit=crop"
     ],
-    "description": "Protective case for iPhone 14. Transparent design with shock absorption.",
+"description": "Protective case for iPhone 14. Transparent design with shock absorption.",
     "inStock": true,
-"reviews": 156,
+    "rating": 4.5,
+    "reviews": 156,
     "featured": false,
     "tags": ["case", "iphone", "protection"],
     "customerReviews": [
@@ -494,8 +492,7 @@
         "reviewText": "Excellent case with great protection. Drop tested multiple times and phone is safe.",
         "helpful": 12,
         "images": []
-      }
+}
     ]
   }
-]
 ]
