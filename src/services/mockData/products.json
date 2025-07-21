@@ -298,9 +298,9 @@
         "date": "2024-01-29",
         "reviewText": "Great for studies and programming. Battery life is good and screen quality is decent.",
         "helpful": 12,
-        "images": []
+"images": []
       }
-]
+    ]
   },
   {
     "Id": 8,
@@ -338,8 +338,8 @@
         "reviewText": "Good quality green tea with nice aroma. Worth the price for organic quality.",
         "helpful": 6,
         "images": []
-      }
-]
+}
+    ]
   },
   {
     "Id": 9,
@@ -377,8 +377,9 @@
         "date": "2024-02-01",
         "reviewText": "Good quality jeans but sizing runs slightly large. Material is durable.",
         "helpful": 17,
-        "images": []
-]
+"images": []
+      }
+    ]
   },
   {
     "Id": 10,
@@ -415,8 +416,9 @@
         "date": "2024-02-02",
         "reviewText": "Good performance and build quality. All jars are useful. Slightly noisy but effective.",
         "helpful": 13,
-        "images": []
-]
+"images": []
+      }
+    ]
   },
   {
     "Id": 11,
@@ -453,8 +455,9 @@
         "date": "2024-02-03",
         "reviewText": "Good quality mat for home workouts. Thickness is perfect and easy to clean.",
         "helpful": 11,
-        "images": []
-]
+"images": []
+      }
+    ]
   },
   {
     "Id": 12,
@@ -491,8 +494,8 @@
         "date": "2024-02-04",
         "reviewText": "Excellent case with great protection. Drop tested multiple times and phone is safe.",
         "helpful": 12,
-        "images": []
-}
+"images": []
+      }
     ]
   }
 ]
