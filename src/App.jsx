@@ -11,7 +11,7 @@ import Checkout from "@/components/pages/Checkout";
 import OrderConfirmation from "@/components/pages/OrderConfirmation";
 import Orders from "@/components/pages/Orders";
 import OrderTracking from "@/components/pages/OrderTracking";
-
+import ContactUs from "@/components/pages/ContactUs";
 function App() {
   return (
     <>
@@ -23,9 +23,10 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
+<Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/track-order/:orderId" element={<OrderTracking />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </Layout>
       

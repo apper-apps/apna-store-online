@@ -13,15 +13,23 @@ const Header = () => {
   const navigate = useNavigate();
   const cartItemCount = getCartItemCount();
 
-  const categories = [
+const categories = [
     { name: "Clothing", icon: "Shirt" },
     { name: "Electronics", icon: "Smartphone" },
     { name: "Groceries", icon: "Apple" },
     { name: "Footwear", icon: "Footprints" },
-    { name: "Home", icon: "Home" },
-    { name: "Sports", icon: "Dumbbell" }
+    { name: "Accessories", icon: "Tag" },
+    { name: "Beauty & Personal Care", icon: "Sparkles" },
+    { name: "Kids & Toys", icon: "Baby" },
+    { name: "Home & Kitchen", icon: "ChefHat" },
+    { name: "Mobile & Gadgets", icon: "TabletSmartphone" },
+    { name: "Festive Offers", icon: "Gift" },
+    { name: "Best Deals", icon: "Percent" }
   ];
 
+  const navItems = [
+    { name: "Contact Us", path: "/contact", icon: "Phone" }
+  ];
   return (
     <>
       {/* Main Header */}
@@ -137,7 +145,20 @@ const Header = () => {
                   <div className="w-8 h-8 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center">
                     <ApperIcon name={category.icon} className="w-4 h-4 text-white" />
                   </div>
-                  <span className="font-medium text-secondary">{category.name}</span>
+<span className="font-medium text-secondary">{category.name}</span>
+                </Link>
+              ))}
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <div className="w-8 h-8 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center">
+                    <ApperIcon name={item.icon} className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="font-medium text-secondary">{item.name}</span>
                 </Link>
               ))}
             </div>
