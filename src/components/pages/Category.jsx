@@ -13,19 +13,27 @@ const Category = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(categoryName || "all");
+const [selectedCategory, setSelectedCategory] = useState(categoryName || "all");
   const [priceRange, setPriceRange] = useState([0, 50000]);
   const [sortBy, setSortBy] = useState("relevance");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [brands, setBrands] = useState([]);
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [sizes, setSizes] = useState([]);
+  const [selectedSizes, setSelectedSizes] = useState([]);
+  const [colors, setColors] = useState([]);
+  const [selectedColors, setSelectedColors] = useState([]);
+  const [selectedRating, setSelectedRating] = useState(0);
 
-  useEffect(() => {
+useEffect(() => {
     loadProducts();
     loadCategories();
+    loadFilterOptions();
   }, [categoryName]);
 
   useEffect(() => {
     applyFilters();
-  }, [products, selectedCategory, priceRange, sortBy]);
+  }, [products, selectedCategory, priceRange, sortBy, selectedBrands, selectedSizes, selectedColors, selectedRating]);
 
   const loadProducts = async () => {
     try {
@@ -42,7 +50,7 @@ const Category = () => {
     }
   };
 
-  const loadCategories = async () => {
+const loadCategories = async () => {
     try {
       const data = await productService.getCategories();
       setCategories(data);
@@ -51,7 +59,22 @@ const Category = () => {
     }
   };
 
-  const applyFilters = () => {
+  const loadFilterOptions = async () => {
+    try {
+      const [brandsData, sizesData, colorsData] = await Promise.all([
+        productService.getBrands(),
+        productService.getSizes(),
+        productService.getColors()
+      ]);
+      setBrands(brandsData);
+      setSizes(sizesData);
+      setColors(colorsData);
+    } catch (err) {
+      console.error("Failed to load filter options:", err);
+    }
+  };
+
+const applyFilters = () => {
     let filtered = [...products];
 
     // Category filter
@@ -65,6 +88,34 @@ const Category = () => {
     filtered = filtered.filter(product => 
       product.price >= priceRange[0] && product.price <= priceRange[1]
     );
+
+    // Brand filter
+    if (selectedBrands.length > 0) {
+      filtered = filtered.filter(product =>
+        selectedBrands.includes(product.brand)
+      );
+    }
+
+    // Size filter
+    if (selectedSizes.length > 0) {
+      filtered = filtered.filter(product =>
+        product.sizes && product.sizes.some(size => selectedSizes.includes(size))
+      );
+    }
+
+    // Color filter
+    if (selectedColors.length > 0) {
+      filtered = filtered.filter(product =>
+        product.colors && product.colors.some(color => selectedColors.includes(color))
+      );
+    }
+
+    // Rating filter
+    if (selectedRating > 0) {
+      filtered = filtered.filter(product =>
+        product.rating >= selectedRating
+      );
+    }
 
     // Sort
     switch (sortBy) {
@@ -115,7 +166,7 @@ const Category = () => {
       <div className="flex gap-8">
         {/* Filters Sidebar */}
         <div className="w-64 flex-shrink-0">
-          <CategoryFilter
+<CategoryFilter
             categories={categories}
             selectedCategory={selectedCategory}
             onCategoryChange={setSelectedCategory}
@@ -123,6 +174,17 @@ const Category = () => {
             onPriceRangeChange={setPriceRange}
             sortBy={sortBy}
             onSortChange={setSortBy}
+            brands={brands}
+            selectedBrands={selectedBrands}
+            onBrandsChange={setSelectedBrands}
+            sizes={sizes}
+            selectedSizes={selectedSizes}
+            onSizesChange={setSelectedSizes}
+            colors={colors}
+            selectedColors={selectedColors}
+            onColorsChange={setSelectedColors}
+            selectedRating={selectedRating}
+            onRatingChange={setSelectedRating}
             isOpen={isFilterOpen}
             onClose={() => setIsFilterOpen(false)}
           />

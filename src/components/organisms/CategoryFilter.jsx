@@ -11,6 +11,17 @@ const CategoryFilter = ({
   onPriceRangeChange,
   sortBy,
   onSortChange,
+  brands,
+  selectedBrands,
+  onBrandsChange,
+  sizes,
+  selectedSizes,
+  onSizesChange,
+  colors,
+  selectedColors,
+  onColorsChange,
+  selectedRating,
+  onRatingChange,
   isOpen,
   onClose 
 }) => {
@@ -22,7 +33,7 @@ const CategoryFilter = ({
     { value: "newest", label: "Newest First" }
   ];
 
-  const FilterContent = () => (
+const FilterContent = () => (
     <div className="space-y-6">
       {/* Categories */}
       <div>
@@ -62,15 +73,162 @@ const CategoryFilter = ({
             <span>₹{priceRange[0].toLocaleString()}</span>
             <span>₹{priceRange[1].toLocaleString()}</span>
           </div>
-          <input
-            type="range"
-            min="0"
-            max="100000"
-            step="500"
-            value={priceRange[1]}
-            onChange={(e) => onPriceRangeChange([priceRange[0], parseInt(e.target.value)])}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
-          />
+          <div className="relative">
+            <input
+              type="range"
+              min="0"
+              max="100000"
+              step="500"
+              value={priceRange[0]}
+              onChange={(e) => onPriceRangeChange([parseInt(e.target.value), priceRange[1]])}
+              className="absolute w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+            />
+            <input
+              type="range"
+              min="0"
+              max="100000"
+              step="500"
+              value={priceRange[1]}
+              onChange={(e) => onPriceRangeChange([priceRange[0], parseInt(e.target.value)])}
+              className="absolute w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Brand Filter */}
+      <div>
+        <h3 className="font-semibold text-secondary mb-3">Brand</h3>
+        <div className="space-y-2 max-h-40 overflow-y-auto">
+          <div className="flex gap-2 mb-2">
+            <button
+              onClick={() => onBrandsChange(brands)}
+              className="text-xs text-primary hover:underline"
+            >
+              Select All
+            </button>
+            <button
+              onClick={() => onBrandsChange([])}
+              className="text-xs text-gray-500 hover:underline"
+            >
+              Clear
+            </button>
+          </div>
+          {brands.map((brand) => (
+            <label key={brand} className="flex items-center space-x-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={selectedBrands.includes(brand)}
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    onBrandsChange([...selectedBrands, brand]);
+                  } else {
+                    onBrandsChange(selectedBrands.filter(b => b !== brand));
+                  }
+                }}
+                className="rounded border-gray-300 text-primary focus:ring-primary"
+              />
+              <span className="text-sm">{brand}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Size Filter */}
+      <div>
+        <h3 className="font-semibold text-secondary mb-3">Size</h3>
+        <div className="grid grid-cols-3 gap-2">
+          {sizes.map((size) => (
+            <button
+              key={size}
+              onClick={() => {
+                if (selectedSizes.includes(size)) {
+                  onSizesChange(selectedSizes.filter(s => s !== size));
+                } else {
+                  onSizesChange([...selectedSizes, size]);
+                }
+              }}
+              className={`p-2 border rounded-lg text-sm transition-colors ${
+                selectedSizes.includes(size)
+                  ? "bg-primary text-white border-primary"
+                  : "border-gray-300 hover:border-primary"
+              }`}
+            >
+              {size}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Color Filter */}
+      <div>
+        <h3 className="font-semibold text-secondary mb-3">Color</h3>
+        <div className="grid grid-cols-4 gap-2">
+          {colors.map((color) => (
+            <button
+              key={color}
+              onClick={() => {
+                if (selectedColors.includes(color)) {
+                  onColorsChange(selectedColors.filter(c => c !== color));
+                } else {
+                  onColorsChange([...selectedColors, color]);
+                }
+              }}
+              className={`relative p-1 rounded-lg border transition-colors ${
+                selectedColors.includes(color)
+                  ? "border-primary ring-2 ring-primary ring-opacity-30"
+                  : "border-gray-300"
+              }`}
+            >
+              <div 
+                className="w-8 h-8 rounded-md border border-gray-200"
+                style={{ backgroundColor: color.toLowerCase() }}
+              />
+              {selectedColors.includes(color) && (
+                <ApperIcon name="Check" className="absolute top-1 right-1 w-3 h-3 text-white" />
+              )}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Rating Filter */}
+      <div>
+        <h3 className="font-semibold text-secondary mb-3">Customer Rating</h3>
+        <div className="space-y-2">
+          {[4, 3, 2, 1].map((rating) => (
+            <label key={rating} className="flex items-center space-x-2 cursor-pointer">
+              <input
+                type="radio"
+                name="rating"
+                checked={selectedRating === rating}
+                onChange={() => onRatingChange(rating)}
+                className="text-primary focus:ring-primary"
+              />
+              <div className="flex items-center space-x-1">
+                {Array.from({ length: 5 }, (_, i) => (
+                  <ApperIcon
+                    key={i}
+                    name="Star"
+                    className={`w-4 h-4 ${
+                      i < rating ? "text-yellow-400 fill-current" : "text-gray-300"
+                    }`}
+                  />
+                ))}
+                <span className="text-sm text-gray-600">& above</span>
+              </div>
+            </label>
+          ))}
+          <label className="flex items-center space-x-2 cursor-pointer">
+            <input
+              type="radio"
+              name="rating"
+              checked={selectedRating === 0}
+              onChange={() => onRatingChange(0)}
+              className="text-primary focus:ring-primary"
+            />
+            <span className="text-sm">All Ratings</span>
+          </label>
         </div>
       </div>
 
