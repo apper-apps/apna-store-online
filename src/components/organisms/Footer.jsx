@@ -109,31 +109,44 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Customer Service */}
+{/* Contact Us */}
           <div>
-            <h4 className="font-semibold mb-4">Customer Service</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/orders" className="text-gray-300 hover:text-white transition-colors">
-                  Track Orders
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Return Policy
+            <h4 className="font-semibold mb-4">Contact Us</h4>
+            <div className="space-y-4 text-sm">
+              <div>
+                <p className="text-gray-300 mb-2">We'd love to hear from you!</p>
+                <p className="text-gray-300 text-xs mb-3">For orders, support, or any queries — please reach out to us.</p>
+              </div>
+              
+              <div>
+                <p className="text-white font-medium mb-2 flex items-center gap-2">
+                  <ApperIcon name="MessageCircle" className="w-4 h-4" />
+                  WhatsApp
+                </p>
+                <a 
+                  href="https://wa.me/919975280940" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors flex items-center gap-1"
+                >
+                  <ApperIcon name="ExternalLink" className="w-3 h-3" />
+                  +91 9975280940
                 </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Support
+              </div>
+              
+              <div>
+                <p className="text-white font-medium mb-2 flex items-center gap-2">
+                  <ApperIcon name="Mail" className="w-4 h-4" />
+                  Email
+                </p>
+                <a 
+                  href="mailto:rlapnastore7@gmail.com"
+                  className="text-gray-300 hover:text-white transition-colors break-all"
+                >
+                  rlapnastore7@gmail.com
                 </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  FAQ
-                </a>
-              </li>
-</ul>
+              </div>
+            </div>
           </div>
         </div>
 
