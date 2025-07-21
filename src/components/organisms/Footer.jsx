@@ -140,22 +140,22 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contact Us</h4>
             <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-2">
+<div className="flex items-center gap-2">
                 <ApperIcon name="Phone" className="w-4 h-4 text-primary" />
-                <a href="tel:+919876543210" className="text-gray-300 hover:text-white transition-colors">
-                  +91-9876543210
+                <a href="tel:+919975280940" className="text-gray-300 hover:text-white transition-colors">
+                  +91-9975280940
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <ApperIcon name="MessageCircle" className="w-4 h-4 text-primary" />
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                <a href="https://wa.me/919975280940" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                   WhatsApp
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <ApperIcon name="Mail" className="w-4 h-4 text-primary" />
-                <a href="mailto:rl.apnastore@gmail.com" className="text-gray-300 hover:text-white transition-colors">
-                  rl.apnastore@gmail.com
+                <a href="mailto:rlapnastore7@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+                  rlapnastore7@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
