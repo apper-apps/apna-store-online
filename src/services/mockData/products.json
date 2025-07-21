@@ -17,9 +17,35 @@
     "description": "Comfortable cotton casual shirt perfect for everyday wear. Available in multiple colors and sizes.",
     "inStock": true,
     "rating": 4.2,
-    "reviews": 156,
+"reviews": 156,
     "featured": true,
-    "tags": ["casual", "cotton", "comfortable"]
+    "tags": ["casual", "cotton", "comfortable"],
+    "customerReviews": [
+      {
+        "reviewer": "Amit Sharma",
+        "rating": 5,
+        "date": "2024-01-15",
+        "reviewText": "Excellent quality shirt! The fabric is very comfortable and the fit is perfect. Worth every penny.",
+        "helpful": 12,
+        "images": []
+      },
+      {
+        "reviewer": "Priya Singh",
+        "rating": 4,
+        "date": "2024-01-10",
+        "reviewText": "Good quality cotton shirt. Slightly loose fit but overall satisfied with the purchase.",
+        "helpful": 8,
+        "images": []
+      },
+      {
+        "reviewer": "Rajesh Kumar",
+        "rating": 5,
+        "date": "2024-01-05",
+        "reviewText": "Amazing quality! The cotton is soft and breathable. Perfect for daily wear.",
+        "helpful": 15,
+        "images": []
+      }
+    ]
   },
 {
     "Id": 2,
@@ -40,9 +66,35 @@
     "description": "Latest Samsung smartphone with advanced camera and long-lasting battery. 128GB storage.",
     "inStock": true,
     "rating": 4.5,
-    "reviews": 342,
+"reviews": 342,
     "featured": true,
-    "tags": ["smartphone", "android", "camera"]
+    "tags": ["smartphone", "android", "camera"],
+    "customerReviews": [
+      {
+        "reviewer": "Tech Reviewer",
+        "rating": 5,
+        "date": "2024-01-20",
+        "reviewText": "Outstanding phone! Camera quality is superb and battery life is excellent. Highly recommended.",
+        "helpful": 25,
+        "images": []
+      },
+      {
+        "reviewer": "Mobile User",
+        "rating": 4,
+        "date": "2024-01-18",
+        "reviewText": "Good performance and features. Camera could be better in low light but overall great value.",
+        "helpful": 18,
+        "images": []
+      },
+      {
+        "reviewer": "Samsung Fan",
+        "rating": 5,
+        "date": "2024-01-15",
+        "reviewText": "Best phone in this price range. Build quality is premium and performance is smooth.",
+        "helpful": 22,
+        "images": []
+      }
+    ]
   },
 {
     "Id": 3,
@@ -61,9 +113,27 @@
     "description": "Premium quality basmati rice, perfect for biryani and pulao. Long grain, aromatic.",
     "inStock": true,
     "rating": 4.7,
-    "reviews": 89,
+"reviews": 89,
     "featured": false,
-    "tags": ["rice", "basmati", "cooking"]
+    "tags": ["rice", "basmati", "cooking"],
+    "customerReviews": [
+      {
+        "reviewer": "Home Cook",
+        "rating": 5,
+        "date": "2024-01-12",
+        "reviewText": "Best basmati rice! Long grains, aromatic and perfect for biryani. Will definitely buy again.",
+        "helpful": 10,
+        "images": []
+      },
+      {
+        "reviewer": "Kitchen Expert",
+        "rating": 4,
+        "date": "2024-01-08",
+        "reviewText": "Good quality rice with nice aroma. Cooks well and tastes great.",
+        "helpful": 7,
+        "images": []
+      }
+    ]
   },
 {
     "Id": 4,
@@ -83,9 +153,35 @@
     "description": "Comfortable and stylish Nike Air Max sneakers. Perfect for running and casual wear.",
     "inStock": true,
     "rating": 4.6,
-    "reviews": 278,
+"reviews": 278,
     "featured": true,
-    "tags": ["sneakers", "nike", "running"]
+    "tags": ["sneakers", "nike", "running"],
+    "customerReviews": [
+      {
+        "reviewer": "Fitness Enthusiast",
+        "rating": 5,
+        "date": "2024-01-25",
+        "reviewText": "Perfect running shoes! Very comfortable and great support. Love the design too.",
+        "helpful": 20,
+        "images": []
+      },
+      {
+        "reviewer": "Runner",
+        "rating": 4,
+        "date": "2024-01-22",
+        "reviewText": "Good quality shoes but runs slightly small. Order half size up. Otherwise excellent.",
+        "helpful": 16,
+        "images": []
+      },
+      {
+        "reviewer": "Sneaker Head",
+        "rating": 5,
+        "date": "2024-01-20",
+        "reviewText": "Amazing sneakers! Style and comfort both are top-notch. Nike quality as expected.",
+        "helpful": 24,
+        "images": []
+      }
+    ]
   },
 {
     "Id": 5,
@@ -105,9 +201,27 @@
     "description": "High-quality wireless headphones with noise cancellation and 20-hour battery life.",
     "inStock": true,
     "rating": 4.4,
-    "reviews": 195,
+"reviews": 195,
     "featured": true,
-    "tags": ["headphones", "wireless", "bluetooth"]
+    "tags": ["headphones", "wireless", "bluetooth"],
+    "customerReviews": [
+      {
+        "reviewer": "Music Lover",
+        "rating": 5,
+        "date": "2024-01-28",
+        "reviewText": "Excellent sound quality! Noise cancellation works great. Battery life is as promised.",
+        "helpful": 19,
+        "images": []
+      },
+      {
+        "reviewer": "Audio Geek",
+        "rating": 4,
+        "date": "2024-01-25",
+        "reviewText": "Good headphones for the price. Bass could be better but overall satisfied.",
+        "helpful": 14,
+        "images": []
+      }
+    ]
   },
   {
     "Id": 6,
@@ -126,9 +240,27 @@
     "description": "Beautiful ethnic kurti for women, perfect for festivals and casual occasions.",
     "inStock": true,
     "rating": 4.3,
-    "reviews": 124,
+"reviews": 124,
     "featured": false,
-    "tags": ["kurti", "ethnic", "women"]
+    "tags": ["kurti", "ethnic", "women"],
+    "customerReviews": [
+      {
+        "reviewer": "Fashion Enthusiast",
+        "rating": 4,
+        "date": "2024-01-30",
+        "reviewText": "Beautiful kurti with nice fabric quality. Color is vibrant and fits well.",
+        "helpful": 11,
+        "images": []
+      },
+      {
+        "reviewer": "Ethnic Wear Lover",
+        "rating": 5,
+        "date": "2024-01-27",
+        "reviewText": "Perfect for festivals! The print is beautiful and material is comfortable.",
+        "helpful": 13,
+        "images": []
+      }
+    ]
   },
 {
     "Id": 7,
@@ -147,11 +279,29 @@
     ],
     "description": "Dell Inspiron 15 laptop with Intel i5 processor, 8GB RAM, and 512GB SSD.",
     "inStock": true,
-    "rating": 4.5,
-    "reviews": 67,
+"reviews": 67,
     "featured": true,
-    "tags": ["laptop", "dell", "computer"]
+    "tags": ["laptop", "dell", "computer"],
+    "customerReviews": [
+      {
+        "reviewer": "Tech Professional",
+        "rating": 5,
+        "date": "2024-02-01",
+        "reviewText": "Excellent laptop for work! Fast performance and good build quality. Recommended.",
+        "helpful": 15,
+        "images": []
+      },
+      {
+        "reviewer": "Student",
+        "rating": 4,
+        "date": "2024-01-29",
+        "reviewText": "Great for studies and programming. Battery life is good and screen quality is decent.",
+        "helpful": 12,
+        "images": []
+      }
+    ]
   },
+  {
   {
     "Id": 8,
     "name": "Organic Green Tea 100g",
@@ -168,11 +318,29 @@
     ],
     "description": "Premium organic green tea with natural antioxidants. Refreshing and healthy.",
     "inStock": true,
-    "rating": 4.1,
-    "reviews": 43,
+"reviews": 43,
     "featured": false,
-    "tags": ["tea", "organic", "healthy"]
+    "tags": ["tea", "organic", "healthy"],
+    "customerReviews": [
+      {
+        "reviewer": "Health Conscious",
+        "rating": 5,
+        "date": "2024-02-02",
+        "reviewText": "Amazing organic tea! Great taste and very refreshing. Perfect for daily consumption.",
+        "helpful": 8,
+        "images": []
+      },
+      {
+        "reviewer": "Tea Connoisseur",
+        "rating": 4,
+        "date": "2024-01-31",
+        "reviewText": "Good quality green tea with nice aroma. Worth the price for organic quality.",
+        "helpful": 6,
+        "images": []
+      }
+    ]
   },
+  {
   {
     "Id": 9,
     "name": "Men's Denim Jeans",
@@ -190,11 +358,29 @@
     ],
     "description": "Classic denim jeans for men. Comfortable fit and durable quality.",
     "inStock": true,
-    "rating": 4.4,
-    "reviews": 234,
+"reviews": 234,
     "featured": true,
-    "tags": ["jeans", "denim", "men"]
+    "tags": ["jeans", "denim", "men"],
+    "customerReviews": [
+      {
+        "reviewer": "Denim Expert",
+        "rating": 5,
+        "date": "2024-02-03",
+        "reviewText": "Perfect fit and excellent quality! Classic Levi's style and comfort. Highly recommend.",
+        "helpful": 21,
+        "images": []
+      },
+      {
+        "reviewer": "Fashion Buyer",
+        "rating": 4,
+        "date": "2024-02-01",
+        "reviewText": "Good quality jeans but sizing runs slightly large. Material is durable.",
+        "helpful": 17,
+        "images": []
+      }
+    ]
   },
+  {
   {
     "Id": 10,
     "name": "Kitchen Mixer Grinder",
@@ -211,11 +397,29 @@
     ],
     "description": "Powerful 750W mixer grinder with 3 jars. Perfect for Indian cooking needs.",
     "inStock": true,
-    "rating": 4.3,
-    "reviews": 189,
+"reviews": 189,
     "featured": false,
-    "tags": ["mixer", "grinder", "kitchen"]
+    "tags": ["mixer", "grinder", "kitchen"],
+    "customerReviews": [
+      {
+        "reviewer": "Home Chef",
+        "rating": 5,
+        "date": "2024-02-04",
+        "reviewText": "Excellent mixer grinder! Very powerful and grinds everything perfectly. Great value.",
+        "helpful": 16,
+        "images": []
+      },
+      {
+        "reviewer": "Kitchen Expert",
+        "rating": 4,
+        "date": "2024-02-02",
+        "reviewText": "Good performance and build quality. All jars are useful. Slightly noisy but effective.",
+        "helpful": 13,
+        "images": []
+      }
+    ]
   },
+  {
   {
     "Id": 11,
     "name": "Yoga Mat Premium",
@@ -232,11 +436,29 @@
     ],
     "description": "High-quality yoga mat with anti-slip surface. Perfect for yoga and exercise.",
     "inStock": true,
-    "rating": 4.6,
-    "reviews": 98,
+"reviews": 98,
     "featured": false,
-    "tags": ["yoga", "fitness", "exercise"]
+    "tags": ["yoga", "fitness", "exercise"],
+    "customerReviews": [
+      {
+        "reviewer": "Yoga Instructor",
+        "rating": 5,
+        "date": "2024-02-05",
+        "reviewText": "Perfect yoga mat! Good grip and cushioning. Non-slip surface works great.",
+        "helpful": 14,
+        "images": []
+      },
+      {
+        "reviewer": "Fitness Enthusiast",
+        "rating": 4,
+        "date": "2024-02-03",
+        "reviewText": "Good quality mat for home workouts. Thickness is perfect and easy to clean.",
+        "helpful": 11,
+        "images": []
+      }
+    ]
   },
+  {
   {
     "Id": 12,
     "name": "Smartphone Case iPhone 14",
@@ -253,9 +475,27 @@
     ],
     "description": "Protective case for iPhone 14. Transparent design with shock absorption.",
     "inStock": true,
-    "rating": 4.2,
-    "reviews": 156,
+"reviews": 156,
     "featured": false,
-    "tags": ["case", "iphone", "protection"]
+    "tags": ["case", "iphone", "protection"],
+    "customerReviews": [
+      {
+        "reviewer": "iPhone User",
+        "rating": 4,
+        "date": "2024-02-06",
+        "reviewText": "Good protection case! Clear design shows phone beauty. Fits perfectly.",
+        "helpful": 9,
+        "images": []
+      },
+      {
+        "reviewer": "Tech Buyer",
+        "rating": 5,
+        "date": "2024-02-04",
+        "reviewText": "Excellent case with great protection. Drop tested multiple times and phone is safe.",
+        "helpful": 12,
+        "images": []
+      }
+    ]
   }
+]
 ]

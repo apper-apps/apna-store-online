@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import Button from "@/components/atoms/Button";
-import Badge from "@/components/atoms/Badge";
-import Card from "@/components/atoms/Card";
-import Loading from "@/components/ui/Loading";
-import Error from "@/components/ui/Error";
-import ApperIcon from "@/components/ApperIcon";
-import { productService } from "@/services/api/productService";
 import { useCart } from "@/hooks/useCart";
 import { toast } from "react-toastify";
+import ApperIcon from "@/components/ApperIcon";
+import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import Cart from "@/components/pages/Cart";
+import Home from "@/components/pages/Home";
+import Card from "@/components/atoms/Card";
+import Badge from "@/components/atoms/Badge";
+import Button from "@/components/atoms/Button";
+import { productService } from "@/services/api/productService";
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -334,14 +336,187 @@ const ProductDetail = () => {
                 <ApperIcon name="RotateCcw" className="w-5 h-5 text-info" />
                 <span className="text-sm">7-day return policy</span>
               </div>
-              <div className="flex items-center gap-3">
+<div className="flex items-center gap-3">
                 <ApperIcon name="Shield" className="w-5 h-5 text-warning" />
                 <span className="text-sm">1-year warranty included</span>
               </div>
             </div>
           </Card>
-</motion.div>
+        </motion.div>
       </div>
+
+      {/* Customer Reviews Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="mt-12"
+      >
+        <Card className="p-6">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-secondary mb-4">Customer Reviews</h2>
+            
+            {/* Review Summary */}
+            <div className="flex flex-col md:flex-row md:items-center gap-6 mb-6 p-4 bg-gray-50 rounded-lg">
+              <div className="text-center md:text-left">
+                <div className="text-4xl font-bold text-secondary mb-2">{product.rating}</div>
+                <div className="flex items-center justify-center md:justify-start mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <ApperIcon
+                      key={i}
+                      name="Star"
+                      className={`w-5 h-5 ${
+                        i < Math.floor(product.rating)
+                          ? "text-warning fill-current"
+                          : "text-gray-300"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <div className="text-gray-600">Based on {product.reviews} reviews</div>
+              </div>
+              
+              {/* Rating Breakdown */}
+              <div className="flex-1">
+                {[5, 4, 3, 2, 1].map((stars) => {
+                  const percentage = Math.max(10, Math.random() * 60 + (6 - stars) * 5);
+                  return (
+                    <div key={stars} className="flex items-center gap-2 mb-1">
+                      <span className="text-sm w-2">{stars}</span>
+                      <ApperIcon name="Star" className="w-3 h-3 text-warning fill-current" />
+                      <div className="flex-1 bg-gray-200 rounded-full h-2">
+                        <div 
+                          className="bg-warning h-2 rounded-full" 
+                          style={{ width: `${percentage}%` }}
+                        ></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-8">{Math.round(percentage)}%</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Filter Options */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              <Button variant="outline" size="sm">
+                All Reviews
+              </Button>
+              <Button variant="outline" size="sm">
+                5 Stars
+              </Button>
+              <Button variant="outline" size="sm">
+                4 Stars
+              </Button>
+              <Button variant="outline" size="sm">
+                3 Stars & Below
+              </Button>
+              <Button variant="outline" size="sm">
+                With Photos
+              </Button>
+            </div>
+          </div>
+
+          {/* Individual Reviews */}
+          <div className="space-y-6">
+            {product.customerReviews && product.customerReviews.slice(0, 5).map((review, index) => (
+              <div key={index} className="border-b border-gray-200 pb-6 last:border-b-0">
+                <div className="flex items-start gap-4">
+                  {/* Reviewer Avatar */}
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-semibold">
+                    {review.reviewer.charAt(0).toUpperCase()}
+                  </div>
+                  
+                  <div className="flex-1">
+                    {/* Reviewer Info */}
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                      <div>
+                        <h4 className="font-semibold text-secondary">{review.reviewer}</h4>
+                        <div className="flex items-center gap-2 mt-1">
+                          <div className="flex">
+                            {[...Array(5)].map((_, i) => (
+                              <ApperIcon
+                                key={i}
+                                name="Star"
+                                className={`w-4 h-4 ${
+                                  i < review.rating
+                                    ? "text-warning fill-current"
+                                    : "text-gray-300"
+                                }`}
+                              />
+                            ))}
+                          </div>
+                          <span className="text-sm text-gray-600">{review.date}</span>
+                        </div>
+                      </div>
+                      <Badge variant="success" size="sm">
+                        <ApperIcon name="Check" className="w-3 h-3 mr-1" />
+                        Verified Purchase
+                      </Badge>
+                    </div>
+
+                    {/* Review Content */}
+                    <p className="text-gray-700 leading-relaxed mb-3">
+                      {review.reviewText}
+                    </p>
+
+                    {/* Review Images (if any) */}
+                    {review.images && review.images.length > 0 && (
+                      <div className="flex gap-2 mb-3">
+                        {review.images.map((image, imgIndex) => (
+                          <img
+                            key={imgIndex}
+                            src={image}
+                            alt={`Review image ${imgIndex + 1}`}
+                            className="w-16 h-16 object-cover rounded-lg border"
+                          />
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Review Actions */}
+                    <div className="flex items-center gap-4 text-sm">
+                      <button className="flex items-center gap-1 text-gray-600 hover:text-secondary transition-colors">
+                        <ApperIcon name="ThumbsUp" className="w-4 h-4" />
+                        Helpful ({review.helpful})
+                      </button>
+                      <button className="flex items-center gap-1 text-gray-600 hover:text-secondary transition-colors">
+                        <ApperIcon name="MessageCircle" className="w-4 h-4" />
+                        Reply
+                      </button>
+                      <button className="flex items-center gap-1 text-gray-600 hover:text-secondary transition-colors">
+                        <ApperIcon name="Flag" className="w-4 h-4" />
+                        Report
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Load More Reviews */}
+          {product.customerReviews && product.customerReviews.length > 5 && (
+            <div className="text-center mt-6">
+              <Button variant="outline" size="lg">
+                Load More Reviews
+              </Button>
+            </div>
+          )}
+
+          {/* Write Review Section */}
+          <div className="mt-8 pt-6 border-t border-gray-200">
+            <h3 className="text-lg font-semibold mb-4">Write a Review</h3>
+            <div className="bg-gray-50 rounded-lg p-4 text-center">
+              <ApperIcon name="Edit3" className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+              <p className="text-gray-600 mb-3">Share your experience with this product</p>
+              <Button variant="outline">
+                Write a Review
+              </Button>
+            </div>
+          </div>
+        </Card>
+      </motion.div>
 
       {/* Zoom Modal */}
       {isZoomModalOpen && (
