@@ -8,13 +8,25 @@ export const productService = {
     return [...productsData];
   },
 
-  async getById(id) {
+async getById(id) {
     await delay(200);
     const product = productsData.find(p => p.Id === parseInt(id));
     if (!product) {
       throw new Error("Product not found");
     }
-    return { ...product };
+    
+    // Enhance product with gallery images if not present
+    const enhancedProduct = { ...product };
+    if (!enhancedProduct.images) {
+      enhancedProduct.images = [
+        enhancedProduct.image,
+        enhancedProduct.image.replace('w=400&h=400', 'w=800&h=800'),
+        enhancedProduct.image.replace('w=400&h=400', 'w=600&h=600'),
+        enhancedProduct.image.replace('fit=crop', 'fit=crop&auto=enhance')
+      ];
+    }
+    
+    return enhancedProduct;
   },
 
   async getByCategory(category) {

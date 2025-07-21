@@ -17,8 +17,11 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [isZoomModalOpen, setIsZoomModalOpen] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
+  const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
   const { addToCart } = useCart();
-
   useEffect(() => {
     loadProduct();
   }, [productId]);
@@ -45,8 +48,57 @@ const ProductDetail = () => {
     addToCart(product, quantity);
     // Navigate to cart or checkout
     window.location.href = "/cart";
+};
+
+  const handleImageSelect = (index) => {
+    setSelectedImageIndex(index);
   };
 
+  const handleImageClick = () => {
+    setIsZoomModalOpen(true);
+    setZoomLevel(1);
+    setZoomPosition({ x: 0, y: 0 });
+  };
+
+  const handleZoomIn = () => {
+    setZoomLevel(prev => Math.min(prev + 0.5, 3));
+  };
+
+  const handleZoomOut = () => {
+    setZoomLevel(prev => Math.max(prev - 0.5, 1));
+  };
+
+  const handleZoomReset = () => {
+    setZoomLevel(1);
+    setZoomPosition({ x: 0, y: 0 });
+  };
+
+  const handleMouseMove = (e) => {
+    if (zoomLevel > 1) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * (zoomLevel - 1) * -100;
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * (zoomLevel - 1) * -100;
+      setZoomPosition({ x, y });
+    }
+  };
+
+  const handleWheel = (e) => {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      handleZoomIn();
+    } else {
+      handleZoomOut();
+    }
+  };
+
+  const navigateImage = (direction) => {
+    const images = product?.images || [product?.image];
+    if (direction === 'prev') {
+      setSelectedImageIndex(prev => prev === 0 ? images.length - 1 : prev - 1);
+    } else {
+      setSelectedImageIndex(prev => prev === images.length - 1 ? 0 : prev + 1);
+    }
+  };
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -93,22 +145,46 @@ const ProductDetail = () => {
         <span className="text-secondary">{product.name}</span>
       </nav>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Product Image */}
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {/* Product Image Gallery */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
+          className="space-y-4"
         >
-          <Card className="overflow-hidden">
+          {/* Main Image */}
+          <Card className="overflow-hidden cursor-zoom-in" onClick={handleImageClick}>
             <img
-              src={product.image}
+              src={product.images?.[selectedImageIndex] || product.image}
               alt={product.name}
-              className="w-full h-96 lg:h-[500px] object-cover"
+              className="w-full h-96 lg:h-[500px] object-cover hover:scale-105 transition-transform duration-300"
             />
           </Card>
+          
+          {/* Thumbnail Gallery */}
+          {product.images && product.images.length > 1 && (
+            <div className="flex gap-2 overflow-x-auto pb-2">
+              {product.images.map((image, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleImageSelect(index)}
+                  className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+                    selectedImageIndex === index
+                      ? 'border-primary shadow-lg'
+                      : 'border-gray-200 hover:border-gray-300'
+                  }`}
+                >
+                  <img
+                    src={image}
+                    alt={`${product.name} view ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
         </motion.div>
-
         {/* Product Info */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
@@ -264,8 +340,104 @@ const ProductDetail = () => {
               </div>
             </div>
           </Card>
-        </motion.div>
+</motion.div>
       </div>
+
+      {/* Zoom Modal */}
+      {isZoomModalOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
+          onClick={() => setIsZoomModalOpen(false)}
+        >
+          <div className="relative w-full h-full flex items-center justify-center p-4">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsZoomModalOpen(false)}
+              className="absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all"
+            >
+              <ApperIcon name="X" className="w-6 h-6 text-white" />
+            </button>
+
+            {/* Zoom Controls */}
+            <div className="absolute top-4 left-4 z-10 flex gap-2">
+              <button
+                onClick={handleZoomOut}
+                disabled={zoomLevel <= 1}
+                className="bg-white bg-opacity-20 hover:bg-opacity-30 disabled:opacity-50 rounded-full p-2 transition-all"
+              >
+                <ApperIcon name="ZoomOut" className="w-5 h-5 text-white" />
+              </button>
+              <button
+                onClick={handleZoomReset}
+                className="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all"
+              >
+                <ApperIcon name="RotateCcw" className="w-5 h-5 text-white" />
+              </button>
+              <button
+                onClick={handleZoomIn}
+                disabled={zoomLevel >= 3}
+                className="bg-white bg-opacity-20 hover:bg-opacity-30 disabled:opacity-50 rounded-full p-2 transition-all"
+              >
+                <ApperIcon name="ZoomIn" className="w-5 h-5 text-white" />
+              </button>
+            </div>
+
+            {/* Navigation Arrows */}
+            {product.images && product.images.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateImage('prev');
+                  }}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-3 transition-all"
+                >
+                  <ApperIcon name="ChevronLeft" className="w-6 h-6 text-white" />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateImage('next');
+                  }}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-3 transition-all"
+                >
+                  <ApperIcon name="ChevronRight" className="w-6 h-6 text-white" />
+                </button>
+              </>
+            )}
+
+            {/* Zoomable Image */}
+            <div
+              className="relative overflow-hidden max-w-full max-h-full cursor-move"
+              onMouseMove={handleMouseMove}
+              onWheel={handleWheel}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={product.images?.[selectedImageIndex] || product.image}
+                alt={product.name}
+                className="max-w-full max-h-full object-contain transition-transform duration-200"
+                style={{
+                  transform: `scale(${zoomLevel}) translate(${zoomPosition.x}px, ${zoomPosition.y}px)`,
+                }}
+                draggable={false}
+              />
+            </div>
+
+            {/* Image Counter */}
+            {product.images && product.images.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-20 rounded-full px-4 py-2">
+                <span className="text-white text-sm">
+                  {selectedImageIndex + 1} / {product.images.length}
+                </span>
+              </div>
+            )}
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 };

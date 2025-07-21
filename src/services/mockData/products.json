@@ -8,6 +8,12 @@
     "subcategory": "shirts",
     "brand": "Roadster",
     "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&h=800&fit=crop&auto=enhance"
+    ],
     "description": "Comfortable cotton casual shirt perfect for everyday wear. Available in multiple colors and sizes.",
     "inStock": true,
     "rating": 4.2,
@@ -15,7 +21,7 @@
     "featured": true,
     "tags": ["casual", "cotton", "comfortable"]
   },
-  {
+{
     "Id": 2,
     "name": "Samsung Galaxy A54",
     "price": 25999,
@@ -24,6 +30,13 @@
     "subcategory": "smartphones",
     "brand": "Samsung",
     "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1567581935884-3349723552ca?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&h=800&fit=crop&auto=enhance",
+      "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=800&h=800&fit=crop"
+    ],
     "description": "Latest Samsung smartphone with advanced camera and long-lasting battery. 128GB storage.",
     "inStock": true,
     "rating": 4.5,
@@ -31,7 +44,7 @@
     "featured": true,
     "tags": ["smartphone", "android", "camera"]
   },
-  {
+{
     "Id": 3,
     "name": "Basmati Rice 5kg",
     "price": 550,
@@ -40,6 +53,11 @@
     "subcategory": "rice",
     "brand": "India Gate",
     "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1506976773555-b3da30a63b57?w=800&h=800&fit=crop"
+    ],
     "description": "Premium quality basmati rice, perfect for biryani and pulao. Long grain, aromatic.",
     "inStock": true,
     "rating": 4.7,
@@ -47,7 +65,7 @@
     "featured": false,
     "tags": ["rice", "basmati", "cooking"]
   },
-  {
+{
     "Id": 4,
     "name": "Nike Air Max Sneakers",
     "price": 4999,
@@ -56,6 +74,12 @@
     "subcategory": "sneakers",
     "brand": "Nike",
     "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&h=800&fit=crop"
+    ],
     "description": "Comfortable and stylish Nike Air Max sneakers. Perfect for running and casual wear.",
     "inStock": true,
     "rating": 4.6,
@@ -63,7 +87,7 @@
     "featured": true,
     "tags": ["sneakers", "nike", "running"]
   },
-  {
+{
     "Id": 5,
     "name": "Wireless Bluetooth Headphones",
     "price": 2499,
@@ -72,6 +96,12 @@
     "subcategory": "audio",
     "brand": "JBL",
     "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=800&h=800&fit=crop"
+    ],
     "description": "High-quality wireless headphones with noise cancellation and 20-hour battery life.",
     "inStock": true,
     "rating": 4.4,
@@ -88,6 +118,11 @@
     "subcategory": "ethnic",
     "brand": "W",
     "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1583743814966-8936f37f4678?w=800&h=800&fit=crop"
+    ],
     "description": "Beautiful ethnic kurti for women, perfect for festivals and casual occasions.",
     "inStock": true,
     "rating": 4.3,
@@ -95,7 +130,7 @@
     "featured": false,
     "tags": ["kurti", "ethnic", "women"]
   },
-  {
+{
     "Id": 7,
     "name": "Laptop Dell Inspiron 15",
     "price": 45999,
@@ -104,6 +139,12 @@
     "subcategory": "laptops",
     "brand": "Dell",
     "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=800&h=800&fit=crop"
+    ],
     "description": "Dell Inspiron 15 laptop with Intel i5 processor, 8GB RAM, and 512GB SSD.",
     "inStock": true,
     "rating": 4.5,
@@ -120,6 +161,11 @@
     "subcategory": "beverages",
     "brand": "Twinings",
     "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1597318378463-b2a9fe2b719b?w=800&h=800&fit=crop"
+    ],
     "description": "Premium organic green tea with natural antioxidants. Refreshing and healthy.",
     "inStock": true,
     "rating": 4.1,
@@ -136,6 +182,12 @@
     "subcategory": "jeans",
     "brand": "Levi's",
     "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1582552938357-32b906df40cb?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=800&fit=crop"
+    ],
     "description": "Classic denim jeans for men. Comfortable fit and durable quality.",
     "inStock": true,
     "rating": 4.4,
@@ -152,6 +204,11 @@
     "subcategory": "kitchen",
     "brand": "Preethi",
     "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1585515656803-1aaa9b8a74e7?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=800&fit=crop"
+    ],
     "description": "Powerful 750W mixer grinder with 3 jars. Perfect for Indian cooking needs.",
     "inStock": true,
     "rating": 4.3,
@@ -168,6 +225,11 @@
     "subcategory": "fitness",
     "brand": "Reebok",
     "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1592901193605-84b5bc1fb97a?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=800&fit=crop"
+    ],
     "description": "High-quality yoga mat with anti-slip surface. Perfect for yoga and exercise.",
     "inStock": true,
     "rating": 4.6,
@@ -184,6 +246,11 @@
     "subcategory": "accessories",
     "brand": "Spigen",
     "image": "https://images.unsplash.com/photo-1601593346740-925612772716?w=400&h=400&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1601593346740-925612772716?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=800&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1574168966919-b894a916cd42?w=800&h=800&fit=crop"
+    ],
     "description": "Protective case for iPhone 14. Transparent design with shock absorption.",
     "inStock": true,
     "rating": 4.2,
