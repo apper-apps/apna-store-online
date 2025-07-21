@@ -139,18 +139,22 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-semibold mb-4">Contact Us</h4>
-            <div className="space-y-3 text-sm">
+<div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <ApperIcon name="Phone" className="w-4 h-4 text-primary" />
-                <span className="text-gray-300">1800-123-4567</span>
+                <a href="tel:+919876543210" className="text-gray-300 hover:text-white transition-colors">
+                  +91-9876543210
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <ApperIcon name="Mail" className="w-4 h-4 text-primary" />
-                <span className="text-gray-300">support@rlapnastore.com</span>
+                <a href="mailto:rl.apnastore@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+                  rl.apnastore@gmail.com
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <ApperIcon name="MapPin" className="w-4 h-4 text-primary" />
-                <span className="text-gray-300">Mumbai, India</span>
+                <span className="text-gray-300">Pune, Maharashtra, India</span>
               </div>
             </div>
           </div>
@@ -161,15 +165,15 @@ const Footer = () => {
             <p className="text-sm text-gray-300">
               © 2024 RL Apna Store. All rights reserved.
             </p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+<div className="flex items-center gap-4">
+              <a href="https://facebook.com/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                 <ApperIcon name="Facebook" className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                <ApperIcon name="Twitter" className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+              <a href="https://instagram.com/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                 <ApperIcon name="Instagram" className="w-5 h-5" />
+              </a>
+              <a href="https://t.me/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                <ApperIcon name="Send" className="w-5 h-5" />
               </a>
             </div>
           </div>
