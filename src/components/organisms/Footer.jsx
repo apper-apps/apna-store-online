@@ -136,14 +136,20 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
+{/* Contact */}
           <div>
             <h4 className="font-semibold mb-4">Contact Us</h4>
-<div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <ApperIcon name="Phone" className="w-4 h-4 text-primary" />
                 <a href="tel:+919876543210" className="text-gray-300 hover:text-white transition-colors">
                   +91-9876543210
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <ApperIcon name="MessageCircle" className="w-4 h-4 text-primary" />
+                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                  WhatsApp
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -155,6 +161,24 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <ApperIcon name="MapPin" className="w-4 h-4 text-primary" />
                 <span className="text-gray-300">Pune, Maharashtra, India</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ApperIcon name="Instagram" className="w-4 h-4 text-primary" />
+                <a href="https://instagram.com/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                  instagram.com/rlapnastore
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <ApperIcon name="Facebook" className="w-4 h-4 text-primary" />
+                <a href="https://facebook.com/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                  facebook.com/rlapnastore
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <ApperIcon name="Send" className="w-4 h-4 text-primary" />
+                <a href="https://t.me/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                  t.me/rlapnastore
+                </a>
               </div>
             </div>
           </div>
