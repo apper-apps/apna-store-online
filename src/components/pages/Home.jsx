@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Button from "@/components/atoms/Button";
-import Card from "@/components/atoms/Card";
-import CategoryCard from "@/components/molecules/CategoryCard";
-import ProductGrid from "@/components/organisms/ProductGrid";
 import ApperIcon from "@/components/ApperIcon";
+import ProductGrid from "@/components/organisms/ProductGrid";
+import Category from "@/components/pages/Category";
+import CategoryCard from "@/components/molecules/CategoryCard";
+import Card from "@/components/atoms/Card";
+import Button from "@/components/atoms/Button";
 import { productService } from "@/services/api/productService";
 
 const Home = () => {
@@ -75,24 +76,22 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              Welcome to <span className="text-yellow-200">RL Apna Store</span>
+Welcome to <span className="text-yellow-200">RL Apna Store</span>
             </motion.h1>
-            
             <motion.p 
-              className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto"
+              className="text-xl md:text-2xl mb-8 text-blue-100"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Discover amazing products at unbeatable prices. Shop with confidence and convenience.
+              Your one-stop destination for quality products at unbeatable prices
             </motion.p>
-            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Link to="/category/clothing">
+              <Link to="/category/all">
                 <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
                   <ApperIcon name="ShoppingBag" className="w-5 h-5 mr-2" />
                   Start Shopping

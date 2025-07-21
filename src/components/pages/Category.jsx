@@ -1,22 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Button from "@/components/atoms/Button";
+import ApperIcon from "@/components/ApperIcon";
 import ProductGrid from "@/components/organisms/ProductGrid";
 import CategoryFilter from "@/components/organisms/CategoryFilter";
-import ApperIcon from "@/components/ApperIcon";
+import Button from "@/components/atoms/Button";
 import { productService } from "@/services/api/productService";
 
 const Category = () => {
   const { categoryName } = useParams();
+  const { category: categoryParam } = useParams();
+  
+  // Validate and sanitize category parameter
+  const validCategoryParam = categoryParam && typeof categoryParam === 'string' 
+    ? categoryParam.toLowerCase() 
+    : 'all';
+    
   const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [categories, setCategories] = useState([]);
-const [selectedCategory, setSelectedCategory] = useState(categoryName || "all");
-  const [priceRange, setPriceRange] = useState([0, 50000]);
-  const [sortBy, setSortBy] = useState("relevance");
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(validCategoryParam);
+  const [priceRange, setPriceRange] = useState([0, 10000]);
+  const [sortBy, setSortBy] = useState('relevance');
   const [brands, setBrands] = useState([]);
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [sizes, setSizes] = useState([]);
@@ -24,8 +30,9 @@ const [selectedCategory, setSelectedCategory] = useState(categoryName || "all");
   const [colors, setColors] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedRating, setSelectedRating] = useState(0);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-useEffect(() => {
+  useEffect(() => {
     loadProducts();
     loadCategories();
     loadFilterOptions();
@@ -80,11 +87,11 @@ const applyFilters = () => {
     // Category filter
     if (selectedCategory !== "all") {
       filtered = filtered.filter(product => 
-        product.category.toLowerCase() === selectedCategory.toLowerCase()
+        product.category?.toLowerCase() === selectedCategory.toLowerCase()
       );
     }
 
-    // Price filter
+// Price filter
     filtered = filtered.filter(product => 
       product.price >= priceRange[0] && product.price <= priceRange[1]
     );
@@ -110,13 +117,12 @@ const applyFilters = () => {
       );
     }
 
-    // Rating filter
+// Rating filter
     if (selectedRating > 0) {
       filtered = filtered.filter(product =>
-        product.rating >= selectedRating
+        (product.rating || 0) >= selectedRating
       );
     }
-
     // Sort
     switch (sortBy) {
       case "price_low":
@@ -128,8 +134,8 @@ const applyFilters = () => {
       case "rating":
         filtered.sort((a, b) => b.rating - a.rating);
         break;
-      case "newest":
-        filtered.sort((a, b) => b.Id - a.Id);
+case "newest":
+        filtered.sort((a, b) => (b.id || 0) - (a.id || 0));
         break;
       default:
         // Keep original order for relevance
@@ -145,9 +151,9 @@ const applyFilters = () => {
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-secondary capitalize mb-2">
           {categoryName ? categoryName.replace("-", " ") : "All Products"}
-        </h1>
+</h1>
         <p className="text-gray-600">
-          {filteredProducts.length} products found
+          {filteredProducts?.length || 0} products found
         </p>
       </div>
 
@@ -165,8 +171,8 @@ const applyFilters = () => {
 
       <div className="flex gap-8">
         {/* Filters Sidebar */}
-        <div className="w-64 flex-shrink-0">
-<CategoryFilter
+<div className="w-64 flex-shrink-0">
+          <CategoryFilter
             categories={categories}
             selectedCategory={selectedCategory}
             onCategoryChange={setSelectedCategory}
