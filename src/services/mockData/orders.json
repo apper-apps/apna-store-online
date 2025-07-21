@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "orderId": "RL1701234567890",
+    "items": [
+      {
+        "productId": 1,
+        "name": "Cotton Casual Shirt",
+        "price": 899,
+        "quantity": 2,
+        "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=400&fit=crop"
+      }
+    ],
+    "total": 1798,
+    "status": "delivered",
+    "shippingAddress": {
+      "name": "Rahul Sharma",
+      "phone": "9876543210",
+      "address": "123 MG Road",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400001"
+    },
+    "orderDate": "2024-01-15T10:30:00.000Z",
+    "estimatedDelivery": "2024-01-22T18:00:00.000Z"
+  },
+  {
+    "Id": 2,
+    "orderId": "RL1701234567891",
+    "items": [
+      {
+        "productId": 2,
+        "name": "Samsung Galaxy A54",
+        "price": 25999,
+        "quantity": 1,
+        "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop"
+      }
+    ],
+    "total": 25999,
+    "status": "shipped",
+    "shippingAddress": {
+      "name": "Priya Patel",
+      "phone": "9876543211",
+      "address": "456 Park Street",
+      "city": "Delhi",
+      "state": "Delhi",
+      "pincode": "110001"
+    },
+    "orderDate": "2024-01-20T14:45:00.000Z",
+    "estimatedDelivery": "2024-01-27T18:00:00.000Z"
+  }
+]
