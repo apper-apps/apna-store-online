@@ -19,10 +19,10 @@ const Footer = () => {
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
                 <ApperIcon name="RotateCcw" className="w-8 h-8 text-white" />
-              </div>
+</div>
               <h3 className="text-lg font-semibold text-secondary mb-2">7-Day Easy Returns</h3>
               <p className="text-gray-600 text-sm">
-                Hassle-free returns within 7 days. No questions asked, your satisfaction is our priority.
+                Easy returns within 7 days for damaged, defective, or wrong products. Items must be unused, in original packaging, with proof of purchase. Return shipping cost borne by buyer unless product was incorrect or defective.
               </p>
             </div>
 
