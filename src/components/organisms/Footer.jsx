@@ -133,54 +133,7 @@ const Footer = () => {
                   FAQ
                 </a>
               </li>
-            </ul>
-          </div>
-
-{/* Contact */}
-          <div>
-            <h4 className="font-semibold mb-4">Contact Us</h4>
-            <div className="space-y-3 text-sm">
-<div className="flex items-center gap-2">
-                <ApperIcon name="Phone" className="w-4 h-4 text-primary" />
-                <a href="tel:+919975280940" className="text-gray-300 hover:text-white transition-colors">
-                  +91-9975280940
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <ApperIcon name="MessageCircle" className="w-4 h-4 text-primary" />
-                <a href="https://wa.me/919975280940" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                  WhatsApp
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <ApperIcon name="Mail" className="w-4 h-4 text-primary" />
-                <a href="mailto:rlapnastore7@gmail.com" className="text-gray-300 hover:text-white transition-colors">
-                  rlapnastore7@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <ApperIcon name="MapPin" className="w-4 h-4 text-primary" />
-                <span className="text-gray-300">Pune, Maharashtra, India</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ApperIcon name="Instagram" className="w-4 h-4 text-primary" />
-                <a href="https://instagram.com/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                  instagram.com/rlapnastore
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <ApperIcon name="Facebook" className="w-4 h-4 text-primary" />
-                <a href="https://facebook.com/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                  facebook.com/rlapnastore
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <ApperIcon name="Send" className="w-4 h-4 text-primary" />
-                <a href="https://t.me/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                  t.me/rlapnastore
-                </a>
-              </div>
-            </div>
+</ul>
           </div>
         </div>
 
@@ -189,21 +142,10 @@ const Footer = () => {
             <p className="text-sm text-gray-300">
               © 2024 RL Apna Store. All rights reserved.
             </p>
-<div className="flex items-center gap-4">
-              <a href="https://facebook.com/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                <ApperIcon name="Facebook" className="w-5 h-5" />
-              </a>
-              <a href="https://instagram.com/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                <ApperIcon name="Instagram" className="w-5 h-5" />
-              </a>
-              <a href="https://t.me/rlapnastore" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                <ApperIcon name="Send" className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
 </div>
+        </div>
       </div>
-    </footer>
+      </footer>
     </>
   );
 };
