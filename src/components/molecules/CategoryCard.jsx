@@ -4,19 +4,23 @@ import { motion } from "framer-motion";
 import Card from "@/components/atoms/Card";
 import ApperIcon from "@/components/ApperIcon";
 
-const CategoryCard = ({ category, icon, image, productCount }) => {
+const CategoryCard = ({ category = '', icon = 'package', image, productCount }) => {
+  // Ensure category is valid for URL generation
+  const categorySlug = category?.toLowerCase() || 'unknown';
+  const displayCategory = category || 'Category';
+  
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Link to={`/category/${category.toLowerCase()}`}>
+      <Link to={`/category/${categorySlug}`}>
         <Card hover className="overflow-hidden text-center p-6">
           {image ? (
             <div className="w-full h-32 mb-4 rounded-lg overflow-hidden">
               <img
                 src={image}
-                alt={category}
+                alt={displayCategory}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -27,7 +31,7 @@ const CategoryCard = ({ category, icon, image, productCount }) => {
           )}
           
           <h3 className="font-semibold text-secondary mb-1 capitalize">
-            {category}
+            {displayCategory}
           </h3>
           
           {productCount && (
@@ -40,5 +44,13 @@ const CategoryCard = ({ category, icon, image, productCount }) => {
     </motion.div>
   );
 };
+
+// PropTypes for development validation (uncomment when prop-types is available)
+// CategoryCard.propTypes = {
+//   category: PropTypes.string,
+//   icon: PropTypes.string,
+//   image: PropTypes.string,
+//   productCount: PropTypes.number
+// };
 
 export default CategoryCard;
